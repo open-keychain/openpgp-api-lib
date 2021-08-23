@@ -6,11 +6,12 @@ android {
         versionCode 10
         versionName '14.0' // API-Version . minor
         minSdkVersion 9
+        targetSdkVersion 31
         namespace 'org.openintents.openpgp'
         if (project.hasProperty('compileSdkVersion')) {
             compileSdk rootProject.ext.compileSdkVersion
         } else {
-            compileSdk 28
+            compileSdk 31
         }
     }
 
