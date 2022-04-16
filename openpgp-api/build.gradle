@@ -14,8 +14,7 @@ android {
             compileSdk 31
         }
     }
-
-    lintOptions {
+    lint {
         abortOnError false
     }
     buildFeatures {
