@@ -202,9 +202,20 @@ public class OpenPgpApi {
      * If an Output stream has been defined the whole public key is returned.
      * required extras:
      * long        EXTRA_KEY_ID
+     * or
+     * String      EXTRA_USER_ID
      * 
      * optional extras:
      * String      EXTRA_REQUEST_ASCII_ARMOR (request that the returned key is encoded in ASCII Armor)
+     * boolean     EXTRA_MINIMIZE            (returns a minimized version of the key, default is false)
+     * String      EXTRA_MINIMIZE_USER_ID
+     *
+     * The minimized version of a key includes:
+     * - the master key
+     * - the current best signing key (if any)
+     * - one encryption key (if any)
+     * - the user id that matches the EXTRA_MINIMIZE_USER_ID value, or the primary user id if none matches
+     * each with their most recent binding certificates
      */
     public static final String ACTION_GET_KEY = "org.openintents.openpgp.action.GET_KEY";
 
