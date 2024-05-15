@@ -206,7 +206,7 @@ public class OpenPgpApi {
      * String      EXTRA_USER_ID
      * 
      * optional extras:
-     * String      EXTRA_REQUEST_ASCII_ARMOR (request that the returned key is encoded in ASCII Armor)
+     * boolean     EXTRA_REQUEST_ASCII_ARMOR (request that the returned key is encoded in ASCII Armor, default is false)
      * boolean     EXTRA_MINIMIZE            (returns a minimized version of the key, default is false)
      * String      EXTRA_MINIMIZE_USER_ID
      *
