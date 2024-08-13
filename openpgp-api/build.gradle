@@ -17,6 +17,12 @@ android {
     lint {
         abortOnError false
     }
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFile('proguard-sdk.pro')
+        }
+    }
     buildFeatures {
         aidl true
     }
@@ -54,3 +60,13 @@ afterEvaluate {
     }
 }
 */
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            afterEvaluate {
+                from components.findByName('release')
+            }
+        }
+    }
+}
