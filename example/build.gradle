@@ -8,8 +8,8 @@ dependencies {
 android {
     defaultConfig {
         minSdkVersion 14
-        compileSdk 31
-        targetSdkVersion 31
+        compileSdk 34
+        targetSdkVersion 34
         applicationId 'org.openintents.openpgp.example'
         versionCode 6
         versionName '7.0'
