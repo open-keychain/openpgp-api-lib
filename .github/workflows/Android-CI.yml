@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
-          java-version: 11
+          java-version: 17
       - uses: gradle/wrapper-validation-action@v1
       - name: Build with Gradle
         run: ./gradlew assemble testDebugUnitTest
