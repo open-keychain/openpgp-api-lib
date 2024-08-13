@@ -20,6 +20,7 @@ android {
     buildFeatures {
         aidl true
     }
+    namespace 'org.openintents.openpgp'
 }
 
 /*
