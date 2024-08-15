@@ -1,23 +1,24 @@
-apply plugin: 'com.android.application'
-
-dependencies {
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation project(':openpgp-api')
+plugins {
+    id 'com.android.application'
 }
 
 android {
-    compileSdkVersion 28
-
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 28
+        compileSdk 34
+        targetSdkVersion 34
         applicationId 'org.openintents.openpgp.example'
         versionCode 6
         versionName '7.0'
     }
-
-    // Do not abort build if lint finds errors
-    lintOptions {
+    lint {
         abortOnError false
     }
+    namespace 'org.openintents.openpgp.example'
+
+}
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(':openpgp-api')
 }

@@ -1,25 +1,32 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
     defaultConfig {
-        versionCode 10
-        versionName '14.0' // API-Version . minor
         minSdkVersion 9
+        targetSdkVersion 34
         namespace 'org.openintents.openpgp'
         if (project.hasProperty('compileSdkVersion')) {
             compileSdk rootProject.ext.compileSdkVersion
         } else {
-            compileSdk 28
+            compileSdk 34
         }
     }
-
-    lintOptions {
+    lint {
         abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFile('proguard-sdk.pro')
+        }
     }
     buildFeatures {
         aidl true
     }
+    namespace 'org.openintents.openpgp'
 }
 
 /*
@@ -53,3 +60,13 @@ afterEvaluate {
     }
 }
 */
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            afterEvaluate {
+                from components.findByName('release')
+            }
+        }
+    }
+}
